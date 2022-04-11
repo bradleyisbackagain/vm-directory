@@ -9,4 +9,5 @@ import Foundation
 /// The primary theme for VM apps.
 public struct PrimaryTheme: Theme {
     public let primaryBrandColor = RawColor(hex: "#C40202")!
+    public init() { }
 }
