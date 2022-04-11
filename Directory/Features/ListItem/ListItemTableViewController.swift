@@ -27,6 +27,10 @@ final class ListItemTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        viewModel.items.bind { [weak self] _ in
+            self?.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +45,7 @@ final class ListItemTableViewController: UITableViewController {
         // TODO: use custom cells
         let id = "demo"
         let cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .subtitle, reuseIdentifier: id)
-        let item = viewModel.items[indexPath.row]
+        let item = viewModel.items.value[indexPath.row]
         item.configure(cell)
         return cell
     }
@@ -51,7 +55,7 @@ final class ListItemTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.items.count
+        viewModel.items.value.count
     }
     
     @objc func refresh() {
@@ -77,8 +81,9 @@ final class ListItemTableViewController: UITableViewController {
 // MARK: - Cell Configuration
 
 extension ListItemViewModel {
+    // TODO: use custom cell, update on binding update
     func configure(_ cell: UITableViewCell) {
-        cell.textLabel?.text = title
-        cell.detailTextLabel?.text = subtitle
+        cell.textLabel?.text = title.value
+        cell.detailTextLabel?.text = subtitle.value
     }
 }

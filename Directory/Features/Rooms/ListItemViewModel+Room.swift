@@ -11,11 +11,11 @@ import DirectoryService
 extension ListItemViewModel {
     init(room: Room) {
         let availableTitle = room.isOccupied ? "Occupied" : "Available"
-        self.title = "Room \(room.id) • \(availableTitle)"
-        self.subtitle = "\(room.maxOccupancy) seats available"
+        self.title = Box("Room \(room.id) • \(availableTitle)")
+        self.subtitle = Box("\(room.maxOccupancy) seats available")
         // TODO: update query
         self.matchesQuery = { _ in true }
-        self.icon = .local(named: "test")
+        self.icon = Box(.local(named: "test"))
     }
 }
 

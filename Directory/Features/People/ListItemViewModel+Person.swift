@@ -10,9 +10,9 @@ import DirectoryService
 
 extension ListItemViewModel {
     init(person: Person) {
-        self.title = person.firstName
-        self.subtitle = person.jobTitle
-        self.icon = .url(person.avatar)
+        self.title = Box(person.firstName)
+        self.subtitle = Box(person.jobTitle)
+        self.icon = Box(.url(person.avatar))
         // TODO: check query
         self.matchesQuery = { _ in true }
     }

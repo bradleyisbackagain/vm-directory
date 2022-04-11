@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import CommonUtils
 
 /// An item that can be displayed in `ListItemTableViewController`
 struct ListItemViewModel {
-    var icon: Icon
-    var title: String
-    var subtitle: String
+    var icon: Box<Icon>
+    var title: Box<String>
+    var subtitle: Box<String>
     /// When filtering, does this user query match this item?
     var matchesQuery: (String) -> Bool
 }
