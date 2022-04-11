@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import UIUtils
 
+/// Displays person detail information.
 final class PersonDetailViewController: DetailItemTableViewController {
     
     let viewModel: PersonDetailViewModel

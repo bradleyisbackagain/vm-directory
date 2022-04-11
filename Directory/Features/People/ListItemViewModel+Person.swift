@@ -19,7 +19,7 @@ extension ListItemViewModel {
     }
 }
 
-/// Adapts the people directory API response 
+/// Adapts the people directory API response.
 final class ListItemViewModelPersonServiceAdapter: ListItemService {
     let api: DirectoryAPI
     var onSelection: ((Person) -> Void)?

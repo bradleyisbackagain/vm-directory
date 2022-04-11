@@ -8,6 +8,7 @@
 import UIKit
 import UIUtils
 
+/// An image view for displaying a user profile image, circle cropped.
 final class PersonImageView: UIAsyncImageView {
     override func layoutSubviews() {
         super.layoutSubviews()
