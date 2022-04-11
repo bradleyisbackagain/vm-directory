@@ -107,8 +107,8 @@
 				75835AF827FEEFF50050DECB /* AppDelegate.swift */,
 				75835AFC27FEEFF50050DECB /* ViewController.swift */,
 				75C40D1328002921002A41E3 /* MainTabBarController.swift */,
-				75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */,
-				75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */,
+				75C40D18280033C2002A41E3 /* Features */,
+				75C40D17280033BA002A41E3 /* Helpers */,
 				75835B0127FEEFF70050DECB /* Assets.xcassets */,
 				75835B0327FEEFF70050DECB /* LaunchScreen.storyboard */,
 				75835B0627FEEFF70050DECB /* Info.plist */,
@@ -131,6 +131,30 @@
 				75835B1B27FEEFF70050DECB /* DirectoryUITestsLaunchTests.swift */,
 			);
 			path = DirectoryUITests;
+			sourceTree = "<group>";
+		};
+		75C40D17280033BA002A41E3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		75C40D18280033C2002A41E3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				75C40D19280033C8002A41E3 /* ListItem */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		75C40D19280033C8002A41E3 /* ListItem */ = {
+			isa = PBXGroup;
+			children = (
+				75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */,
+			);
+			path = ListItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
