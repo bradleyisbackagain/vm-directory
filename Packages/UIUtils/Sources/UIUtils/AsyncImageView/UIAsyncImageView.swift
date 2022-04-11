@@ -7,7 +7,7 @@
 import UIKit
 
 /// A UIImageView that can load an image from a URL.
-public class UIAsyncImageView: UIImageView {
+open class UIAsyncImageView: UIImageView {
     /// The service that performs the loading of the image.
     public var loader: AsyncImageViewLoader
     
@@ -31,7 +31,7 @@ public class UIAsyncImageView: UIImageView {
     }
     
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
