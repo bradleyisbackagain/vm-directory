@@ -10,7 +10,12 @@ import DirectoryService
 
 struct PersonDetailViewModel {
     private static let nameFormatter = PersonNameComponentsFormatter()
-    private static let dateFormatter = DateFormatter()
+    private static let dateFormatter: DateFormatter = {
+        let fm = DateFormatter()
+        fm.dateStyle = .short
+        fm.timeStyle = .short
+        return fm
+    }()
     
     private let person: Person
     
