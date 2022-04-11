@@ -22,6 +22,10 @@ final class ListItemTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,8 +52,13 @@ final class ListItemTableViewController: UITableViewController {
         viewModel.rowCount()
     }
     
+    @objc func refresh() {
+        loadModelData()
+    }
+    
     private func loadModelData() {
         viewModel.loadData { result in
+            defer { self.refreshControl?.endRefreshing() }
             switch result {
             case .success:
                 self.tableView.reloadData()
