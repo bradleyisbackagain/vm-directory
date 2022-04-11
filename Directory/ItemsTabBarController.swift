@@ -10,35 +10,31 @@ import DirectoryService
 
 final class ItemsTabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    let api: any DirectoryAPI
+    
+    init(api: any DirectoryAPI) {
+        self.api = api
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
         
-        let productionAPI = makeProductionAPI()
         self.viewControllers = [
-            makePeopleViewController(api: productionAPI),
-            makeRoomsViewController(api: productionAPI),
+            makePeopleViewController(api: api),
+            makeRoomsViewController(api: api),
         ]
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         print("selected", viewController)
-    }
-    
-    func makeProductionAPI() -> RemoteDirectoryAPI {
-        let url = URL("https://61e947967bc0550017bc61bf.mockapi.io/api/v1")
-        let decoder = JSONDecoder()
-        let dateDecoder = ISO8601MillisecondsDecoder()
-        decoder.dateDecodingStrategy = .custom(dateDecoder.decode)
-        return RemoteDirectoryAPI(baseURL: url, jsonDecoder: decoder)
-    }
-    
-    func makeStubAPI() -> StubDirectoryAPI {
-        StubDirectoryAPI(
-            peopleData: .success([.init(id: "1", createdAt: Date(), firstName: "test", lastName: "test", avatar: URL(string: "https://avatars.githubusercontent.com/u/103203694?v=4")!, email: "test@test.com", jobTitle: "Runner", favouriteColor: "green")]),
-            roomsData: .success([.init(id: "123", createdAt: Date(), maxOccupancy: 100, isOccupied: false), .init(id: "456", createdAt: Date(), maxOccupancy: 20, isOccupied: true)])
-        )
     }
     
     func makePeopleViewController(api: any DirectoryAPI) -> UIViewController {
