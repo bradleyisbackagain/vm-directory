@@ -26,4 +26,8 @@ struct PersonDetailViewModel {
     var fullName: String {
         Self.nameFormatter.string(from: nameComponents)
     }
+    
+    var avatarURL: URL {
+        person.avatar
+    }
 }

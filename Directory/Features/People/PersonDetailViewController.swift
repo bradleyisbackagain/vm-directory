@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import UIUtils
 
 final class PersonDetailViewController: UIViewController {
     
@@ -22,12 +23,44 @@ final class PersonDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private lazy var profileImage: PersonImageView = {
+        let loader = URLSessionAsyncImageViewLoader()
+        let view = PersonImageView(loader: loader)
+        let size: CGFloat = 120
+        view.height(equalTo: size)
+        view.constrainAsSquare()
+        view.layer.cornerRadius = 120/2
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = viewModel.fullName
+        label.font = .preferredFont(forTextStyle: .title2)
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var mainStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [profileImage, titleLabel])
+        stack.axis = .vertical
+        stack.alignment = .center
+        return stack
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let label = UILabel()
-        label.text = viewModel.fullName
-        view.addSubview(label)
-        view.edgeConstrain(subview: label, layoutGuide: .margins)
+        view.backgroundColor = .white
+        
+        view.addSubview(mainStack)
+        view.edgeConstrain(subview: mainStack, layoutGuide: .margins)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        profileImage.loadRemote(url: viewModel.avatarURL)
     }
 }
