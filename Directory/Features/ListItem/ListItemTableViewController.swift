@@ -96,6 +96,7 @@ final class ListItemTableViewController: UITableViewController {
     }
     
     private func loadModelData() {
+        refreshControl?.beginRefreshing()
         viewModel.loadData { [weak self] result in
             DispatchQueue.main.async {
                 defer { self?.refreshControl?.endRefreshing() }
