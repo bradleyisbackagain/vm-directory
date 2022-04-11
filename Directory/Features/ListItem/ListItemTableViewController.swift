@@ -31,7 +31,9 @@ final class ListItemTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        loadModelData()
+        if tableView.numberOfRows(inSection: 0) == 0 {
+            loadModelData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
