@@ -23,12 +23,31 @@ final class ListItemTableViewController: UITableViewController {
     
     private let listItemTableViewCellReuseIdentifier = "list-cell"
     
+    /// Temporary cache when searching for items, these are the items that match the query.
+    private var filteredItems = [ListItemViewModel]()
+    
+    private let searchController = UISearchController(searchResultsController: nil)
+    
+    private var isSearchBarEmpty: Bool {
+        searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    private var dataSource: [ListItemViewModel] {
+        isSearchBarEmpty ? viewModel.items.value : filteredItems
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         refreshControl = UIRefreshControl()
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         
         tableView.register(
             ListItemTableViewCell.self,
@@ -50,7 +69,7 @@ final class ListItemTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: listItemTableViewCellReuseIdentifier, for: indexPath) as! ListItemTableViewCell
-        let item = viewModel.items.value[indexPath.row]
+        let item = dataSource[indexPath.row]
         item.configure(cell)
         return cell
     }
@@ -60,16 +79,16 @@ final class ListItemTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.items.value.count
+        dataSource.count
     }
     
     override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        let item = viewModel.items.value[indexPath.row]
+        let item = dataSource[indexPath.row]
         return item.onSelection != nil
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = viewModel.items.value[indexPath.row]
+        let item = dataSource[indexPath.row]
         item.onSelection?()
     }
     
@@ -90,5 +109,19 @@ final class ListItemTableViewController: UITableViewController {
                 }
             }
         }
+    }
+}
+
+extension ListItemTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filter(searchText: searchBar.text ?? "")
+    }
+    
+    func filter(searchText: String) {
+        filteredItems = viewModel.items.value.filter { item in
+            item.matchesQuery(searchText)
+        }
+        tableView.reloadData()
     }
 }
