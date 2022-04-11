@@ -14,11 +14,11 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         
         self.delegate = self
         
-        let firstTab = ViewController()
+        let listTab = ListItemTableViewController()
         let firstTabItem = UITabBarItem(title: "First", image: nil, tag: 0)
-        firstTab.tabBarItem = firstTabItem
+        listTab.tabBarItem = firstTabItem
         
-        self.viewControllers = [firstTab]
+        self.viewControllers = [listTab]
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
