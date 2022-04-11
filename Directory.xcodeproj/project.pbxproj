@@ -25,6 +25,7 @@
 		75835B1027FEEFF70050DECB /* PersonListItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835B0F27FEEFF70050DECB /* PersonListItemTests.swift */; };
 		75835B1A27FEEFF70050DECB /* DirectoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835B1927FEEFF70050DECB /* DirectoryUITests.swift */; };
 		75835B1C27FEEFF70050DECB /* DirectoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835B1B27FEEFF70050DECB /* DirectoryUITestsLaunchTests.swift */; };
+		758537D1280433D900DE9860 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758537D0280433D900DE9860 /* MainSplitViewController.swift */; };
 		75B6C864280424AD00476C5F /* PersonDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B6C863280424AD00476C5F /* PersonDetailViewModelTests.swift */; };
 		75B6C8662804281600476C5F /* ListItemServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B6C8652804281600476C5F /* ListItemServiceTests.swift */; };
 		75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */; };
@@ -79,6 +80,7 @@
 		75835B1527FEEFF70050DECB /* DirectoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirectoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75835B1927FEEFF70050DECB /* DirectoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryUITests.swift; sourceTree = "<group>"; };
 		75835B1B27FEEFF70050DECB /* DirectoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		758537D0280433D900DE9860 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		75B6C863280424AD00476C5F /* PersonDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModelTests.swift; sourceTree = "<group>"; };
 		75B6C8652804281600476C5F /* ListItemServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemServiceTests.swift; sourceTree = "<group>"; };
 		75C40D102800196E002A41E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				75835AF827FEEFF50050DECB /* AppDelegate.swift */,
+				758537D0280433D900DE9860 /* MainSplitViewController.swift */,
 				75C40D1328002921002A41E3 /* MainTabBarController.swift */,
 				75C40D18280033C2002A41E3 /* Features */,
 				75C40D17280033BA002A41E3 /* Helpers */,
@@ -397,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758537D1280433D900DE9860 /* MainSplitViewController.swift in Sources */,
 				75669C9F2801FF2E00699C7F /* ListItemTableViewCell.swift in Sources */,
 				75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */,
 				75669CBD2804084300699C7F /* UIView+Padding.swift in Sources */,

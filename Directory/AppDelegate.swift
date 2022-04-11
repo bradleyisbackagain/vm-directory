@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureAppearance()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = MainTabBarController()
+        window.rootViewController = MainSplitViewController()
         window.makeKeyAndVisible()
         self.window = window
         return true
