@@ -43,14 +43,17 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
     func makePeopleViewController(api: any DirectoryAPI) -> UIViewController {
         let service = ListItemViewModelPersonServiceAdapter(api: api)
         let viewModel = ListItemTableViewModel(service: service)
-        let viewController = ListItemTableViewController(viewModel: viewModel)
+        let vc = ListItemTableViewController(viewModel: viewModel)
+        service.onSelection = { [weak vc] person in
+            vc?.select(person: person)
+        }
         let tabItem = UITabBarItem(
             title: "People",
             image: UIImage(named: "round_supervisor_account_black_36pt"),
             tag: 0
         )
-        viewController.tabBarItem = tabItem
-        return viewController
+        vc.tabBarItem = tabItem
+        return vc
     }
     
     func makeRoomsViewController(api: any DirectoryAPI) -> UIViewController {
