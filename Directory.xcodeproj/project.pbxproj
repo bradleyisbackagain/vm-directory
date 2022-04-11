@@ -18,6 +18,10 @@
 		75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */; };
 		75C40D262800525F002A41E3 /* DirectoryService in Frameworks */ = {isa = PBXBuildFile; productRef = 75C40D252800525F002A41E3 /* DirectoryService */; };
 		75C40D2A28007EA7002A41E3 /* ThemeService in Frameworks */ = {isa = PBXBuildFile; productRef = 75C40D2928007EA7002A41E3 /* ThemeService */; };
+		75C40D2C28008AC3002A41E3 /* ListItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D2B28008AC3002A41E3 /* ListItemService.swift */; };
+		75C40D30280091A2002A41E3 /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */; };
+		75C40D322800944B002A41E3 /* ListItemViewModel+Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */; };
+		75C40D3428009759002A41E3 /* ListItemViewModel+Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewController.swift; sourceTree = "<group>"; };
 		75C40D2728006C8C002A41E3 /* DirectoryService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DirectoryService; sourceTree = "<group>"; };
 		75C40D2828007B43002A41E3 /* ThemeService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ThemeService; sourceTree = "<group>"; };
+		75C40D2B28008AC3002A41E3 /* ListItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemService.swift; sourceTree = "<group>"; };
+		75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
+		75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemViewModel+Person.swift"; sourceTree = "<group>"; };
+		75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemViewModel+Room.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,10 @@
 			isa = PBXGroup;
 			children = (
 				75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */,
+				75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */,
+				75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */,
+				75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */,
+				75C40D2B28008AC3002A41E3 /* ListItemService.swift */,
 			);
 			path = ListItem;
 			sourceTree = "<group>";
@@ -313,9 +325,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */,
+				75C40D2C28008AC3002A41E3 /* ListItemService.swift in Sources */,
 				75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */,
+				75C40D322800944B002A41E3 /* ListItemViewModel+Person.swift in Sources */,
 				75C40D1428002921002A41E3 /* MainTabBarController.swift in Sources */,
 				75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */,
+				75C40D3428009759002A41E3 /* ListItemViewModel+Room.swift in Sources */,
+				75C40D30280091A2002A41E3 /* ListItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
