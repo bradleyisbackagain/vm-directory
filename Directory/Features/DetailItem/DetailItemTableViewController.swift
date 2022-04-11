@@ -31,4 +31,8 @@ class DetailItemTableViewController: UITableViewController {
         cell.detailTextLabel?.text = item.detail
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        false
+    }
 }
