@@ -10,10 +10,10 @@ import DirectoryService
 
 extension ListItemViewModel {
     init(room: Room) {
-        let availableTitle = room.isOccupied ? "Occupied" : "Available"
-        self.title = Box("Room \(room.id) • \(availableTitle)")
+        self.title = Box("Room \(room.id)")
         let seatsTitle = room.maxOccupancy == 1 ? "seat" : "seats"
-        self.subtitle = Box("\(room.maxOccupancy) \(seatsTitle)")
+        let availableTitle = room.isOccupied ? "Occupied" : "Available"
+        self.subtitle = Box("\(availableTitle) • \(room.maxOccupancy) \(seatsTitle)")
         let icon = room.isOccupied ? "round_no_meeting_room_black_24pt" : "round_meeting_room_black_24pt"
         self.icon = Box(.local(named: icon))
         self.matchesQuery = { search in

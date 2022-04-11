@@ -28,34 +28,34 @@ class RoomListItemTests: XCTestCase {
 extension RoomListItemTests {
     func test_occupiedRoomTitle() {
         let listItem = ListItemViewModel(room: occupiedRoom)
-        XCTAssertEqual(listItem.title.value, "Room 123 • Occupied")
+        XCTAssertEqual(listItem.title.value, "Room 123")
     }
     
     func test_availableRoomTitle() {
         let listItem = ListItemViewModel(room: availableRoom)
-        XCTAssertEqual(listItem.title.value, "Room 456 • Available")
+        XCTAssertEqual(listItem.title.value, "Room 456")
     }
     
     func test_occupiedRoomSubtitle() {
         let listItem = ListItemViewModel(room: occupiedRoom)
-        XCTAssertEqual(listItem.subtitle.value, "1000 seats")
+        XCTAssertEqual(listItem.subtitle.value, "Occupied • 1000 seats")
     }
     
     func test_occupiedRoomSingleSeat() {
         occupiedRoom.maxOccupancy = 1
         let listItem = ListItemViewModel(room: occupiedRoom)
-        XCTAssertEqual(listItem.subtitle.value, "1 seat")
+        XCTAssertEqual(listItem.subtitle.value, "Occupied • 1 seat")
     }
     
     func test_availableRoomSubtitle() {
         let listItem = ListItemViewModel(room: availableRoom)
-        XCTAssertEqual(listItem.subtitle.value, "50 seats")
+        XCTAssertEqual(listItem.subtitle.value, "Available • 50 seats")
     }
     
     func test_availableRoomSingleSeat() {
         availableRoom.maxOccupancy = 1
         let listItem = ListItemViewModel(room: availableRoom)
-        XCTAssertEqual(listItem.subtitle.value, "1 seat")
+        XCTAssertEqual(listItem.subtitle.value, "Available • 1 seat")
     }
 }
 
