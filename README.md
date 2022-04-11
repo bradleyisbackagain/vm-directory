@@ -21,7 +21,7 @@ A simple directory application.
     
 ### Testing
 
-[ ] Unit tests for all business logic
+[x] Unit tests for all business logic
 [ ] UI tests for views and view controllers
 
 ### Other
