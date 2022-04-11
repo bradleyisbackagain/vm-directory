@@ -16,6 +16,7 @@
 		75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */; };
 		75C40D1428002921002A41E3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1328002921002A41E3 /* MainTabBarController.swift */; };
 		75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */; };
+		75C40D262800525F002A41E3 /* DirectoryService in Frameworks */ = {isa = PBXBuildFile; productRef = 75C40D252800525F002A41E3 /* DirectoryService */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutHelpers.swift; sourceTree = "<group>"; };
 		75C40D1328002921002A41E3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewController.swift; sourceTree = "<group>"; };
+		75C40D2728006C8C002A41E3 /* DirectoryService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DirectoryService; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C40D262800525F002A41E3 /* DirectoryService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +87,9 @@
 				75835AF727FEEFF50050DECB /* Directory */,
 				75835B0E27FEEFF70050DECB /* DirectoryTests */,
 				75835B1827FEEFF70050DECB /* DirectoryUITests */,
+				75C40D1E28004992002A41E3 /* Packages */,
 				75835AF627FEEFF50050DECB /* Products */,
+				75C40D2028004C24002A41E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 			wrapsLines = 0;
@@ -154,6 +159,21 @@
 			path = ListItem;
 			sourceTree = "<group>";
 		};
+		75C40D1E28004992002A41E3 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				75C40D2728006C8C002A41E3 /* DirectoryService */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		75C40D2028004C24002A41E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,6 +190,9 @@
 			dependencies = (
 			);
 			name = Directory;
+			packageProductDependencies = (
+				75C40D252800525F002A41E3 /* DirectoryService */,
+			);
 			productName = Directory;
 			productReference = 75835AF527FEEFF50050DECB /* Directory.app */;
 			productType = "com.apple.product-type.application";
@@ -615,6 +638,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		75C40D252800525F002A41E3 /* DirectoryService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DirectoryService;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 75835AED27FEEFF50050DECB /* Project object */;
 }
