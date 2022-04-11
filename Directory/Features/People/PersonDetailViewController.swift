@@ -9,13 +9,14 @@ import Foundation
 import UIKit
 import UIUtils
 
-final class PersonDetailViewController: UIViewController {
+final class PersonDetailViewController: DetailItemTableViewController {
     
     let viewModel: PersonDetailViewModel
     
     init(viewModel: PersonDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        super.items = viewModel.detailItems
     }
     
     @available(*, unavailable)
@@ -26,18 +27,15 @@ final class PersonDetailViewController: UIViewController {
     private lazy var profileImage: PersonImageView = {
         let loader = URLSessionAsyncImageViewLoader()
         let view = PersonImageView(loader: loader)
-        let size: CGFloat = 120
-        view.height(equalTo: size)
+        view.height(equalTo: 120)
         view.constrainAsSquare()
-        view.layer.cornerRadius = 120/2
-        view.layer.masksToBounds = true
         return view
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = viewModel.fullName
-        label.font = .preferredFont(forTextStyle: .title2)
+        label.font = .preferredFont(forTextStyle: .title1)
         label.textColor = .black
         return label
     }()
@@ -46,21 +44,21 @@ final class PersonDetailViewController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [profileImage, titleLabel])
         stack.axis = .vertical
         stack.alignment = .center
+        stack.backgroundColor = .white
+        stack.spacing = 16
         return stack
     }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        
-        view.addSubview(mainStack)
-        view.edgeConstrain(subview: mainStack, layoutGuide: .margins)
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         profileImage.loadRemote(url: viewModel.avatarURL)
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        viewForHeaderInSection section: Int
+    ) -> UIView? {
+        mainStack.padding(.all(16), color: .white)
     }
 }
