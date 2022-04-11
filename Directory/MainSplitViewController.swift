@@ -14,6 +14,8 @@ final class MainSplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        preferredDisplayMode = .allVisible
+        
         let placeholder = UIViewController()
         viewControllers = [
             ItemsTabBarController(api: makeProductionAPI()),
