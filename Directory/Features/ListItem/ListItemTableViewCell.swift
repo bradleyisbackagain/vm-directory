@@ -101,5 +101,7 @@ extension ListItemViewModel {
                 cell.iconImageView.isHidden = true
             }
         }
+        let hasAction = onSelection != nil
+        cell.accessoryType = hasAction ? .disclosureIndicator : .none
     }
 }
