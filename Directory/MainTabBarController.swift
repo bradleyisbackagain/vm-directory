@@ -36,7 +36,7 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
     func makeStubAPI() -> StubDirectoryAPI {
         StubDirectoryAPI(
             peopleData: .success([.init(id: "1", createdAt: Date(), firstName: "test", lastName: "test", avatar: URL(string: "https://avatars.githubusercontent.com/u/103203694?v=4")!, email: "test@test.com", jobTitle: "Runner", favouriteColor: "green")]),
-            roomsData: .success([])
+            roomsData: .success([.init(id: "123", createdAt: Date(), maxOccupancy: 100, isOccupied: false), .init(id: "456", createdAt: Date(), maxOccupancy: 20, isOccupied: true)])
         )
     }
     
