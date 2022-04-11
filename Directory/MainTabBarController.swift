@@ -54,7 +54,7 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
     }
     
     func makeRoomsViewController(api: any DirectoryAPI) -> UIViewController {
-        let service = ListItemViewModelPersonServiceAdapter(api: api)
+        let service = ListItemViewModelRoomServiceAdapter(api: api)
         let viewModel = ListItemTableViewModel(service: service)
         let viewController = ListItemTableViewController(viewModel: viewModel)
         let tabItem = UITabBarItem(
