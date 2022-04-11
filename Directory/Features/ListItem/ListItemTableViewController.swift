@@ -27,15 +27,7 @@ final class ListItemTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.loadData { result in
-            switch result {
-            case .success:
-                self.tableView.reloadData()
-            case .failure(let error):
-                // TODO: surface error
-                print(error)
-            }
-        }
+        loadModelData()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,6 +46,18 @@ final class ListItemTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.rowCount()
+    }
+    
+    private func loadModelData() {
+        viewModel.loadData { result in
+            switch result {
+            case .success:
+                self.tableView.reloadData()
+            case .failure(let error):
+                // TODO: surface error
+                print(error)
+            }
+        }
     }
 }
 
