@@ -42,8 +42,7 @@ final class ListItemTableViewController: UITableViewController {
         let id = "demo"
         let cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .subtitle, reuseIdentifier: id)
         let item = viewModel.items[indexPath.row]
-        let configurator = ListItemViewModelCellConfigurator(item: item)
-        configurator.configure(cell: cell)
+        item.configure(cell)
         return cell
     }
     
@@ -75,11 +74,11 @@ final class ListItemTableViewController: UITableViewController {
     }
 }
 
-struct ListItemViewModelCellConfigurator {
-    let item: ListItemViewModel
-    
-    func configure(cell: UITableViewCell) {
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.subtitle
+// MARK: - Cell Configuration
+
+extension ListItemViewModel {
+    func configure(_ cell: UITableViewCell) {
+        cell.textLabel?.text = title
+        cell.detailTextLabel?.text = subtitle
     }
 }
