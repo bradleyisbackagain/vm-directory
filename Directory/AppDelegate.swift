@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func configureAppearance() {
         let color = theme.primaryBrandColor.uiColor()
-        UITabBar.appearance().barTintColor = color
         UITabBar.appearance().tintColor = color
         
         UINavigationBar.appearance().tintColor = color
