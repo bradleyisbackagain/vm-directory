@@ -16,6 +16,7 @@ final class ListItemTableViewCell: UITableViewCell {
         lbl.font = .preferredFont(forTextStyle: .headline)
         lbl.textColor = .black
         lbl.setContentCompressionResistancePriority(.required, for: .vertical)
+        lbl.accessibilityHint = "Title"
         return lbl
     }()
     
@@ -24,6 +25,7 @@ final class ListItemTableViewCell: UITableViewCell {
         lbl.font = .preferredFont(forTextStyle: .footnote)
         lbl.textColor = .gray
         lbl.setContentCompressionResistancePriority(.required, for: .vertical)
+        lbl.accessibilityHint = "Subtitle"
         return lbl
     }()
     
