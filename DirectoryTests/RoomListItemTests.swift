@@ -21,6 +21,36 @@ class RoomListItemTests: XCTestCase {
 
     override func tearDownWithError() throws {
     }
+}
+
+// MARK: - Labels
+
+extension RoomListItemTests {
+    func test_occupiedRoomTitle() {
+        let listItem = ListItemViewModel(room: occupiedRoom)
+        XCTAssertEqual(listItem.title.value, "Room 123 • Occupied")
+    }
+    
+    func test_availableRoomTitle() {
+        let listItem = ListItemViewModel(room: availableRoom)
+        XCTAssertEqual(listItem.title.value, "Room 456 • Available")
+    }
+    
+    func test_occupiedRoomSubtitle() {
+        let listItem = ListItemViewModel(room: occupiedRoom)
+        XCTAssertEqual(listItem.subtitle.value, "1000 seats available")
+    }
+    
+    func test_availableRoomSubtitle() {
+        let listItem = ListItemViewModel(room: availableRoom)
+        XCTAssertEqual(listItem.subtitle.value, "50 seats available")
+    }
+}
+
+
+// MARK: - Query
+
+extension RoomListItemTests {
     
     func test_roomMatchesFullID() {
         let listItem = ListItemViewModel(room: occupiedRoom)
@@ -87,4 +117,5 @@ class RoomListItemTests: XCTestCase {
         let match = listItem.matchesQuery("occupied")
         XCTAssertFalse(match)
     }
+    
 }
