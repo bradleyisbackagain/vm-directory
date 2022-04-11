@@ -13,6 +13,7 @@
 		75669CAB28034BD100699C7F /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CAA28034BD100699C7F /* PersonDetailViewModel.swift */; };
 		75669CAD28034C4400699C7F /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CAC28034C4400699C7F /* PersonDetailViewController.swift */; };
 		75669CB228035A2300699C7F /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 75669CB128035A2300699C7F /* UIUtils */; };
+		75669CB42804015B00699C7F /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CB32804015B00699C7F /* PersonImageView.swift */; };
 		75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835AF827FEEFF50050DECB /* AppDelegate.swift */; };
 		75835B0227FEEFF70050DECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0127FEEFF70050DECB /* Assets.xcassets */; };
 		75835B0527FEEFF70050DECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0327FEEFF70050DECB /* LaunchScreen.storyboard */; };
@@ -55,6 +56,7 @@
 		75669CAA28034BD100699C7F /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		75669CAC28034C4400699C7F /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		75669CB02803566100699C7F /* UIUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIUtils; sourceTree = "<group>"; };
+		75669CB32804015B00699C7F /* PersonImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImageView.swift; sourceTree = "<group>"; };
 		75835AF527FEEFF50050DECB /* Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75835AF827FEEFF50050DECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75835B0127FEEFF70050DECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				75669CAA28034BD100699C7F /* PersonDetailViewModel.swift */,
 				75669CAC28034C4400699C7F /* PersonDetailViewController.swift */,
 				75669CA828034B6F00699C7F /* UIViewController+Person.swift */,
+				75669CB32804015B00699C7F /* PersonImageView.swift */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				75669CA928034B6F00699C7F /* UIViewController+Person.swift in Sources */,
 				75C40D3628009ADE002A41E3 /* ListItemTableViewModel.swift in Sources */,
 				75669CA12802089A00699C7F /* UIViewController+Error.swift in Sources */,
+				75669CB42804015B00699C7F /* PersonImageView.swift in Sources */,
 				75C40D3428009759002A41E3 /* ListItemViewModel+Room.swift in Sources */,
 				75C40D30280091A2002A41E3 /* ListItemViewModel.swift in Sources */,
 				75669CAD28034C4400699C7F /* PersonDetailViewController.swift in Sources */,
