@@ -14,6 +14,8 @@
 		75669CAD28034C4400699C7F /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CAC28034C4400699C7F /* PersonDetailViewController.swift */; };
 		75669CB228035A2300699C7F /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 75669CB128035A2300699C7F /* UIUtils */; };
 		75669CB42804015B00699C7F /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CB32804015B00699C7F /* PersonImageView.swift */; };
+		75669CB72804051B00699C7F /* DetailItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CB62804051B00699C7F /* DetailItemViewModel.swift */; };
+		75669CB92804053C00699C7F /* DetailItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CB82804053C00699C7F /* DetailItemTableViewController.swift */; };
 		75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835AF827FEEFF50050DECB /* AppDelegate.swift */; };
 		75835B0227FEEFF70050DECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0127FEEFF70050DECB /* Assets.xcassets */; };
 		75835B0527FEEFF70050DECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0327FEEFF70050DECB /* LaunchScreen.storyboard */; };
@@ -57,6 +59,8 @@
 		75669CAC28034C4400699C7F /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		75669CB02803566100699C7F /* UIUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIUtils; sourceTree = "<group>"; };
 		75669CB32804015B00699C7F /* PersonImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImageView.swift; sourceTree = "<group>"; };
+		75669CB62804051B00699C7F /* DetailItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemViewModel.swift; sourceTree = "<group>"; };
+		75669CB82804053C00699C7F /* DetailItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemTableViewController.swift; sourceTree = "<group>"; };
 		75835AF527FEEFF50050DECB /* Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75835AF827FEEFF50050DECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75835B0127FEEFF70050DECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75669CB52804051400699C7F /* DetailItem */ = {
+			isa = PBXGroup;
+			children = (
+				75669CB62804051B00699C7F /* DetailItemViewModel.swift */,
+				75669CB82804053C00699C7F /* DetailItemTableViewController.swift */,
+			);
+			path = DetailItem;
+			sourceTree = "<group>";
+		};
 		75835AEC27FEEFF50050DECB = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 		75C40D18280033C2002A41E3 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				75669CB52804051400699C7F /* DetailItem */,
 				75C40D39280166AF002A41E3 /* Rooms */,
 				75C40D38280166A8002A41E3 /* People */,
 				75C40D19280033C8002A41E3 /* ListItem */,
@@ -370,6 +384,7 @@
 			files = (
 				75669C9F2801FF2E00699C7F /* ListItemTableViewCell.swift in Sources */,
 				75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */,
+				75669CB72804051B00699C7F /* DetailItemViewModel.swift in Sources */,
 				75C40D2C28008AC3002A41E3 /* ListItemService.swift in Sources */,
 				75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */,
 				75C40D322800944B002A41E3 /* ListItemViewModel+Person.swift in Sources */,
@@ -383,6 +398,7 @@
 				75C40D30280091A2002A41E3 /* ListItemViewModel.swift in Sources */,
 				75669CAD28034C4400699C7F /* PersonDetailViewController.swift in Sources */,
 				75669CAB28034BD100699C7F /* PersonDetailViewModel.swift in Sources */,
+				75669CB92804053C00699C7F /* DetailItemTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
