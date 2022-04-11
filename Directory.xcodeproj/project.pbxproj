@@ -160,6 +160,8 @@
 		75C40D18280033C2002A41E3 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				75C40D39280166AF002A41E3 /* Rooms */,
+				75C40D38280166A8002A41E3 /* People */,
 				75C40D19280033C8002A41E3 /* ListItem */,
 			);
 			path = Features;
@@ -171,8 +173,6 @@
 				75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */,
 				75C40D3528009ADE002A41E3 /* ListItemTableViewModel.swift */,
 				75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */,
-				75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */,
-				75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */,
 				75C40D2B28008AC3002A41E3 /* ListItemService.swift */,
 			);
 			path = ListItem;
@@ -193,6 +193,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75C40D38280166A8002A41E3 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		75C40D39280166AF002A41E3 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */,
+			);
+			path = Rooms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
