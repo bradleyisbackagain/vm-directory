@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import DirectoryService
 
 final class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+    
+    let stubAPI = StubDirectoryAPI(
+        peopleData: .success([.init(id: "1", createdAt: Date(), firstName: "test", lastName: "test", avatar: URL(string: "https://google.com")!, email: "test@test.com", jobTitle: "Runner", favouriteColor: "green")]),
+        roomsData: .success([])
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +31,9 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
     }
     
     func makePeopleViewController() -> UIViewController {
-        let viewController = ListItemTableViewController()
+        let service = ListItemViewModelPersonServiceAdapter(api: stubAPI)
+        let viewModel = ListItemTableViewModel(service: service)
+        let viewController = ListItemTableViewController(viewModel: viewModel)
         let tabItem = UITabBarItem(
             title: "People",
             image: UIImage(named: "round_supervisor_account_black_36pt"),
@@ -36,7 +44,9 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
     }
     
     func makeRoomsViewController() -> UIViewController {
-        let viewController = ListItemTableViewController()
+        let service = ListItemViewModelPersonServiceAdapter(api: stubAPI)
+        let viewModel = ListItemTableViewModel(service: service)
+        let viewController = ListItemTableViewController(viewModel: viewModel)
         let tabItem = UITabBarItem(
             title: "Rooms",
             image: UIImage(named: "round_meeting_room_black_36pt"),

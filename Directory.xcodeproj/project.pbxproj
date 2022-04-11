@@ -22,6 +22,7 @@
 		75C40D30280091A2002A41E3 /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */; };
 		75C40D322800944B002A41E3 /* ListItemViewModel+Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */; };
 		75C40D3428009759002A41E3 /* ListItemViewModel+Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */; };
+		75C40D3628009ADE002A41E3 /* ListItemTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D3528009ADE002A41E3 /* ListItemTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
 		75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemViewModel+Person.swift"; sourceTree = "<group>"; };
 		75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemViewModel+Room.swift"; sourceTree = "<group>"; };
+		75C40D3528009ADE002A41E3 /* ListItemTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */,
+				75C40D3528009ADE002A41E3 /* ListItemTableViewModel.swift */,
 				75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */,
 				75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */,
 				75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */,
@@ -330,6 +333,7 @@
 				75C40D322800944B002A41E3 /* ListItemViewModel+Person.swift in Sources */,
 				75C40D1428002921002A41E3 /* MainTabBarController.swift in Sources */,
 				75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */,
+				75C40D3628009ADE002A41E3 /* ListItemTableViewModel.swift in Sources */,
 				75C40D3428009759002A41E3 /* ListItemViewModel+Room.swift in Sources */,
 				75C40D30280091A2002A41E3 /* ListItemViewModel.swift in Sources */,
 			);

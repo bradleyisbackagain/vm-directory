@@ -8,27 +8,60 @@
 import UIKit
 
 final class ListItemTableViewController: UITableViewController {
+    let viewModel: ListItemTableViewModel
     
-    // TODO: inject data source
-    let data = ["one", "two", "three"]
+    init(viewModel: ListItemTableViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.loadData { result in
+            switch result {
+            case .success:
+                self.tableView.reloadData()
+            case .failure(let error):
+                // TODO: surface error
+                print(error)
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // TODO: use custom cells
         let id = "demo"
-        let cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .default, reuseIdentifier: id)
-        cell.textLabel?.text = data[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .subtitle, reuseIdentifier: id)
+        let item = viewModel.items[indexPath.row]
+        let configurator = ListItemViewModelCellConfigurator(item: item)
+        configurator.configure(cell: cell)
         return cell
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        viewModel.sectionCount()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        viewModel.rowCount()
+    }
+}
+
+struct ListItemViewModelCellConfigurator {
+    let item: ListItemViewModel
+    
+    func configure(cell: UITableViewCell) {
+        cell.textLabel?.text = item.title
+        cell.detailTextLabel?.text = item.subtitle
     }
 }
