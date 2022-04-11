@@ -10,9 +10,9 @@ import DirectoryService
 
 final class ItemsTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    let api: any DirectoryAPI
+    let api: DirectoryAPI
     
-    init(api: any DirectoryAPI) {
+    init(api: DirectoryAPI) {
         self.api = api
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,7 +37,7 @@ final class ItemsTabBarController: UITabBarController, UITabBarControllerDelegat
         print("selected", viewController)
     }
     
-    func makePeopleViewController(api: any DirectoryAPI) -> UIViewController {
+    func makePeopleViewController(api: DirectoryAPI) -> UIViewController {
         let title = "People"
         
         let service = ListItemViewModelPersonServiceAdapter(api: api)
@@ -58,7 +58,7 @@ final class ItemsTabBarController: UITabBarController, UITabBarControllerDelegat
         return navigation
     }
     
-    func makeRoomsViewController(api: any DirectoryAPI) -> UIViewController {
+    func makeRoomsViewController(api: DirectoryAPI) -> UIViewController {
         let title = "Rooms"
         let service = ListItemViewModelRoomServiceAdapter(api: api)
         let viewModel = ListItemTableViewModel(service: service)

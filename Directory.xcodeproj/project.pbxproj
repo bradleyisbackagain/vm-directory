@@ -12,7 +12,6 @@
 		75669CA928034B6F00699C7F /* UIViewController+Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CA828034B6F00699C7F /* UIViewController+Person.swift */; };
 		75669CAB28034BD100699C7F /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CAA28034BD100699C7F /* PersonDetailViewModel.swift */; };
 		75669CAD28034C4400699C7F /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CAC28034C4400699C7F /* PersonDetailViewController.swift */; };
-		75669CB228035A2300699C7F /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 75669CB128035A2300699C7F /* UIUtils */; };
 		75669CB42804015B00699C7F /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CB32804015B00699C7F /* PersonImageView.swift */; };
 		75669CB72804051B00699C7F /* DetailItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CB62804051B00699C7F /* DetailItemViewModel.swift */; };
 		75669CB92804053C00699C7F /* DetailItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CB82804053C00699C7F /* DetailItemTableViewController.swift */; };
@@ -31,13 +30,15 @@
 		75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */; };
 		75C40D1428002921002A41E3 /* ItemsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1328002921002A41E3 /* ItemsTabBarController.swift */; };
 		75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */; };
-		75C40D262800525F002A41E3 /* DirectoryService in Frameworks */ = {isa = PBXBuildFile; productRef = 75C40D252800525F002A41E3 /* DirectoryService */; };
-		75C40D2A28007EA7002A41E3 /* ThemeService in Frameworks */ = {isa = PBXBuildFile; productRef = 75C40D2928007EA7002A41E3 /* ThemeService */; };
 		75C40D2C28008AC3002A41E3 /* ListItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D2B28008AC3002A41E3 /* ListItemService.swift */; };
 		75C40D30280091A2002A41E3 /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */; };
 		75C40D322800944B002A41E3 /* ListItemViewModel+Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */; };
 		75C40D3428009759002A41E3 /* ListItemViewModel+Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */; };
 		75C40D3628009ADE002A41E3 /* ListItemTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D3528009ADE002A41E3 /* ListItemTableViewModel.swift */; };
+		75DA578D28046EFB00571DC2 /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 75DA578C28046EFB00571DC2 /* UIUtils */; };
+		75DA578F28046EFF00571DC2 /* CommonUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 75DA578E28046EFF00571DC2 /* CommonUtils */; };
+		75DA579128046F0200571DC2 /* ThemeService in Frameworks */ = {isa = PBXBuildFile; productRef = 75DA579028046F0200571DC2 /* ThemeService */; };
+		75F0049E28046E3300B44104 /* DirectoryService in Frameworks */ = {isa = PBXBuildFile; productRef = 75F0049D28046E3300B44104 /* DirectoryService */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,9 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75669CB228035A2300699C7F /* UIUtils in Frameworks */,
-				75C40D2A28007EA7002A41E3 /* ThemeService in Frameworks */,
-				75C40D262800525F002A41E3 /* DirectoryService in Frameworks */,
+				75DA579128046F0200571DC2 /* ThemeService in Frameworks */,
+				75DA578F28046EFF00571DC2 /* CommonUtils in Frameworks */,
+				75DA578D28046EFB00571DC2 /* UIUtils in Frameworks */,
+				75F0049E28046E3300B44104 /* DirectoryService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +284,10 @@
 			);
 			name = Directory;
 			packageProductDependencies = (
-				75C40D252800525F002A41E3 /* DirectoryService */,
-				75C40D2928007EA7002A41E3 /* ThemeService */,
-				75669CB128035A2300699C7F /* UIUtils */,
+				75F0049D28046E3300B44104 /* DirectoryService */,
+				75DA578C28046EFB00571DC2 /* UIUtils */,
+				75DA578E28046EFF00571DC2 /* CommonUtils */,
+				75DA579028046F0200571DC2 /* ThemeService */,
 			);
 			productName = Directory;
 			productReference = 75835AF527FEEFF50050DECB /* Directory.app */;
@@ -752,17 +755,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		75669CB128035A2300699C7F /* UIUtils */ = {
+		75DA578C28046EFB00571DC2 /* UIUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIUtils;
 		};
-		75C40D252800525F002A41E3 /* DirectoryService */ = {
+		75DA578E28046EFF00571DC2 /* CommonUtils */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DirectoryService;
+			productName = CommonUtils;
 		};
-		75C40D2928007EA7002A41E3 /* ThemeService */ = {
+		75DA579028046F0200571DC2 /* ThemeService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ThemeService;
+		};
+		75F0049D28046E3300B44104 /* DirectoryService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DirectoryService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
