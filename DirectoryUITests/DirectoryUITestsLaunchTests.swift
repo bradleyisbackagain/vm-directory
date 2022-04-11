@@ -7,6 +7,8 @@
 
 import XCTest
 
+// TODO: screenshots
+
 class DirectoryUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {

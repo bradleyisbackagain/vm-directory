@@ -39,12 +39,15 @@ final class ListItemTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.accessibilityIdentifier = "ListItemTableView"
+        
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.accessibilityTraits = .searchField
         navigationItem.searchController = searchController
         definesPresentationContext = true
         

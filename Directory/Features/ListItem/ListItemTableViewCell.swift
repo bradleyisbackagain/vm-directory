@@ -17,6 +17,7 @@ final class ListItemTableViewCell: UITableViewCell {
         lbl.textColor = .black
         lbl.setContentCompressionResistancePriority(.required, for: .vertical)
         lbl.accessibilityHint = "Title"
+        lbl.accessibilityIdentifier = "TitleLabel"
         return lbl
     }()
     
@@ -26,6 +27,7 @@ final class ListItemTableViewCell: UITableViewCell {
         lbl.textColor = .gray
         lbl.setContentCompressionResistancePriority(.required, for: .vertical)
         lbl.accessibilityHint = "Subtitle"
+        lbl.accessibilityIdentifier = "SubtitleLabel"
         return lbl
     }()
     
