@@ -64,6 +64,7 @@
 		75C40D312800944B002A41E3 /* ListItemViewModel+Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemViewModel+Person.swift"; sourceTree = "<group>"; };
 		75C40D3328009759002A41E3 /* ListItemViewModel+Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemViewModel+Room.swift"; sourceTree = "<group>"; };
 		75C40D3528009ADE002A41E3 /* ListItemTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewModel.swift; sourceTree = "<group>"; };
+		75C40D3728015B73002A41E3 /* CommonUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CommonUtils; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +181,7 @@
 		75C40D1E28004992002A41E3 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				75C40D3728015B73002A41E3 /* CommonUtils */,
 				75C40D2828007B43002A41E3 /* ThemeService */,
 				75C40D2728006C8C002A41E3 /* DirectoryService */,
 			);
