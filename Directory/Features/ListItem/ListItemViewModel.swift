@@ -7,6 +7,7 @@
 
 import Foundation
 import CommonUtils
+import UIKit
 
 /// An item that can be displayed in `ListItemTableViewController`
 struct ListItemViewModel {
@@ -23,6 +24,6 @@ struct ListItemViewModel {
 extension ListItemViewModel {
     enum Icon {
         case url(URL)
-        case local(named: String)
+        case local(named: String, tint: UIColor? = nil)
     }
 }

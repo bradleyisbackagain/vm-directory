@@ -91,8 +91,9 @@ extension ListItemViewModel {
             if let icon = icon {
                 cell.iconImageView.isHidden = false
                 switch icon {
-                case .local(let name):
-                    cell.iconImageView.image = UIImage(named: name)
+                case .local(let name, let tint):
+                    cell.iconImageView.image = UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
+                    cell.iconImageView.tintColor = tint ?? .black
                 case .url(let url):
                     cell.iconImageView.loadRemote(url: url)
                 }
