@@ -21,6 +21,11 @@ extension ListItemService {
         }
         return service
     }
+    
+    /// If fetching fails, fallback to the provided service.
+    func fallback(_ service: ListItemService) -> ListItemService {
+        ListItemFallbackService(primary: self, fallback: service)
+    }
 }
 
 // MARK: - Default Services
