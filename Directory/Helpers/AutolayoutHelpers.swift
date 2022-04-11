@@ -50,4 +50,32 @@ extension UIView {
         NSLayoutConstraint.activate(newContraints)
     }
     
+    /// Sets the width of this view equal to the height.
+    /// - returns: the newly created constraint
+    @discardableResult
+    func constrainAsSquare() -> NSLayoutConstraint {
+        let constraint = widthAnchor.constraint(equalTo: heightAnchor, multiplier: 1)
+        constraint.isActive = true
+        return constraint
+    }
+    
+    /// Sets the height of this view to be constrained to a constant.
+    /// - returns: the newly created constraint
+    @discardableResult
+    func height(
+        equalTo constant: CGFloat
+    ) -> NSLayoutConstraint {
+        let constraint = heightAnchor.constraint(equalToConstant: constant)
+        constraint.isActive = true
+        return constraint
+    }
+    
+    /// Sets the width of this view to be constrained to a constant.
+    /// - returns: the newly created constraint
+    @discardableResult
+    func width(equalTo constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = widthAnchor.constraint(equalToConstant: constant)
+        constraint.isActive = true
+        return constraint
+    }
 }
