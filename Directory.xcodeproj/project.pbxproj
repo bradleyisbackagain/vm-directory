@@ -25,6 +25,7 @@
 		75835B1027FEEFF70050DECB /* PersonListItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835B0F27FEEFF70050DECB /* PersonListItemTests.swift */; };
 		75835B1A27FEEFF70050DECB /* DirectoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835B1927FEEFF70050DECB /* DirectoryUITests.swift */; };
 		75835B1C27FEEFF70050DECB /* DirectoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835B1B27FEEFF70050DECB /* DirectoryUITestsLaunchTests.swift */; };
+		75B6C864280424AD00476C5F /* PersonDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B6C863280424AD00476C5F /* PersonDetailViewModelTests.swift */; };
 		75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */; };
 		75C40D1428002921002A41E3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1328002921002A41E3 /* MainTabBarController.swift */; };
 		75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */; };
@@ -77,6 +78,7 @@
 		75835B1527FEEFF70050DECB /* DirectoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirectoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75835B1927FEEFF70050DECB /* DirectoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryUITests.swift; sourceTree = "<group>"; };
 		75835B1B27FEEFF70050DECB /* DirectoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75B6C863280424AD00476C5F /* PersonDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModelTests.swift; sourceTree = "<group>"; };
 		75C40D102800196E002A41E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutHelpers.swift; sourceTree = "<group>"; };
 		75C40D1328002921002A41E3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				75835B0F27FEEFF70050DECB /* PersonListItemTests.swift */,
+				75B6C863280424AD00476C5F /* PersonDetailViewModelTests.swift */,
 				75669CC028040E5500699C7F /* RoomListItemTests.swift */,
 			);
 			path = DirectoryTests;
@@ -419,6 +422,7 @@
 			files = (
 				75835B1027FEEFF70050DECB /* PersonListItemTests.swift in Sources */,
 				75669CC128040E5500699C7F /* RoomListItemTests.swift in Sources */,
+				75B6C864280424AD00476C5F /* PersonDetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
