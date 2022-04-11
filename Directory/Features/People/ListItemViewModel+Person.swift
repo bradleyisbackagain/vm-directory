@@ -14,8 +14,13 @@ extension ListItemViewModel {
         self.subtitle = Box(person.jobTitle)
         self.icon = Box(.url(person.avatar))
         self.onSelection = onSelection
-        // TODO: check query
-        self.matchesQuery = { _ in true }
+        self.matchesQuery = { search in
+            let lc = search.lowercased()
+            return person.email.lowercased().contains(lc) ||
+                person.firstName.lowercased().contains(lc) ||
+                person.lastName.lowercased().contains(lc) ||
+                person.id.lowercased() == lc
+        }
     }
 }
 
