@@ -57,11 +57,11 @@ final class ListItemTableViewController: UITableViewController {
     }
     
     private func loadModelData() {
-        viewModel.loadData { result in
-            defer { self.refreshControl?.endRefreshing() }
+        viewModel.loadData { [weak self] result in
+            defer { self?.refreshControl?.endRefreshing() }
             switch result {
             case .success:
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             case .failure(let error):
                 // TODO: surface error
                 print(error)
