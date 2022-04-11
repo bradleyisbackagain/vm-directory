@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// A `UITableViewController` that can display `ListItemViewModel`s.
 final class ListItemTableViewController: UITableViewController {
     let viewModel: ListItemTableViewModel
     
