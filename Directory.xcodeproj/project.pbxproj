@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75669C9F2801FF2E00699C7F /* ListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669C9E2801FF2E00699C7F /* ListItemTableViewCell.swift */; };
 		75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835AF827FEEFF50050DECB /* AppDelegate.swift */; };
 		75835B0227FEEFF70050DECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0127FEEFF70050DECB /* Assets.xcassets */; };
 		75835B0527FEEFF70050DECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0327FEEFF70050DECB /* LaunchScreen.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75669C9E2801FF2E00699C7F /* ListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewCell.swift; sourceTree = "<group>"; };
 		75835AF527FEEFF50050DECB /* Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75835AF827FEEFF50050DECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75835B0127FEEFF70050DECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */,
+				75669C9E2801FF2E00699C7F /* ListItemTableViewCell.swift */,
 				75C40D3528009ADE002A41E3 /* ListItemTableViewModel.swift */,
 				75C40D2F280091A2002A41E3 /* ListItemViewModel.swift */,
 				75C40D2B28008AC3002A41E3 /* ListItemService.swift */,
@@ -345,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75669C9F2801FF2E00699C7F /* ListItemTableViewCell.swift in Sources */,
 				75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */,
 				75C40D2C28008AC3002A41E3 /* ListItemService.swift in Sources */,
 				75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */,

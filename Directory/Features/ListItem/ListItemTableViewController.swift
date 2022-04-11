@@ -21,12 +21,19 @@ final class ListItemTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private let listItemTableViewCellReuseIdentifier = "list-cell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         refreshControl = UIRefreshControl()
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        tableView.register(
+            ListItemTableViewCell.self,
+            forCellReuseIdentifier: listItemTableViewCellReuseIdentifier
+        )
         
         viewModel.items.bind { [weak self] _ in
             self?.tableView.reloadData()
@@ -42,9 +49,7 @@ final class ListItemTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: use custom cells
-        let id = "demo"
-        let cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .subtitle, reuseIdentifier: id)
+        let cell = tableView.dequeueReusableCell(withIdentifier: listItemTableViewCellReuseIdentifier, for: indexPath) as! ListItemTableViewCell
         let item = viewModel.items.value[indexPath.row]
         item.configure(cell)
         return cell
@@ -75,15 +80,5 @@ final class ListItemTableViewController: UITableViewController {
                 }
             }
         }
-    }
-}
-
-// MARK: - Cell Configuration
-
-extension ListItemViewModel {
-    // TODO: use custom cell, update on binding update
-    func configure(_ cell: UITableViewCell) {
-        cell.textLabel?.text = title.value
-        cell.detailTextLabel?.text = subtitle.value
     }
 }
