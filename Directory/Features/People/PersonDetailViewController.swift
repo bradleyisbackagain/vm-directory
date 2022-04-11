@@ -37,7 +37,7 @@ final class PersonDetailViewController: DetailItemTableViewController {
         let label = UILabel()
         label.text = viewModel.fullName
         label.font = .preferredFont(forTextStyle: .title1)
-        label.textColor = .black
+        label.textColor = SemanticColor.textPrimary
         return label
     }()
     
@@ -45,7 +45,7 @@ final class PersonDetailViewController: DetailItemTableViewController {
         let stack = UIStackView(arrangedSubviews: [profileImage, titleLabel])
         stack.axis = .vertical
         stack.alignment = .center
-        stack.backgroundColor = .white
+        stack.backgroundColor = SemanticColor.backgroundPrimary
         stack.spacing = 16
         return stack
     }()
@@ -60,6 +60,6 @@ final class PersonDetailViewController: DetailItemTableViewController {
         _ tableView: UITableView,
         viewForHeaderInSection section: Int
     ) -> UIView? {
-        mainStack.padding(.all(16), color: .white)
+        mainStack.padding(.all(16), color: SemanticColor.backgroundPrimary)
     }
 }

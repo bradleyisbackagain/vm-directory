@@ -14,7 +14,7 @@ final class ListItemTableViewCell: UITableViewCell {
     fileprivate lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .preferredFont(forTextStyle: .headline)
-        lbl.textColor = .black
+        lbl.textColor = SemanticColor.textPrimary
         lbl.setContentCompressionResistancePriority(.required, for: .vertical)
         lbl.accessibilityHint = "Title"
         lbl.accessibilityIdentifier = "TitleLabel"
@@ -24,7 +24,7 @@ final class ListItemTableViewCell: UITableViewCell {
     fileprivate lazy var subtitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .preferredFont(forTextStyle: .footnote)
-        lbl.textColor = .gray
+        lbl.textColor = SemanticColor.textSecondary
         lbl.setContentCompressionResistancePriority(.required, for: .vertical)
         lbl.accessibilityHint = "Subtitle"
         lbl.accessibilityIdentifier = "SubtitleLabel"
@@ -96,8 +96,9 @@ extension ListItemViewModel {
                 cell.iconImageView.isHidden = false
                 switch icon {
                 case .local(let name, let tint):
-                    cell.iconImageView.image = UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
-                    cell.iconImageView.tintColor = tint ?? .black
+                    cell.iconImageView.image = UIImage(named: name)?
+                        .withRenderingMode(.alwaysTemplate)
+                    cell.iconImageView.tintColor = tint ?? SemanticColor.textPrimary
                 case .url(let url):
                     cell.iconImageView.loadRemote(url: url)
                 }

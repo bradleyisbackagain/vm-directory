@@ -7,6 +7,8 @@
 
 import Foundation
 import DirectoryService
+import UIUtils
+import UIKit
 
 extension ListItemViewModel {
     init(room: Room) {
@@ -15,7 +17,8 @@ extension ListItemViewModel {
         let availableTitle = room.isOccupied ? "Occupied" : "Available"
         self.subtitle = Box("\(availableTitle) • \(room.maxOccupancy) \(seatsTitle)")
         let icon = room.isOccupied ? "round_no_meeting_room_black_24pt" : "round_meeting_room_black_24pt"
-        self.icon = Box(.local(named: icon, tint: room.isOccupied ? .red : .black))
+        let tintColor: UIColor = room.isOccupied ? .red : SemanticColor.textPrimary
+        self.icon = Box(.local(named: icon, tint: tintColor))
         self.matchesQuery = { search in
             let lc = search.lowercased()
             return room.id.lowercased().contains(lc) ||
