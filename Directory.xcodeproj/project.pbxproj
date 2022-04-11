@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		75669C9F2801FF2E00699C7F /* ListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669C9E2801FF2E00699C7F /* ListItemTableViewCell.swift */; };
+		75669CA12802089A00699C7F /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CA02802089A00699C7F /* UIViewController+Error.swift */; };
 		75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835AF827FEEFF50050DECB /* AppDelegate.swift */; };
 		75835B0227FEEFF70050DECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0127FEEFF70050DECB /* Assets.xcassets */; };
 		75835B0527FEEFF70050DECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0327FEEFF70050DECB /* LaunchScreen.storyboard */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		75669C9E2801FF2E00699C7F /* ListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewCell.swift; sourceTree = "<group>"; };
+		75669CA02802089A00699C7F /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 		75835AF527FEEFF50050DECB /* Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75835AF827FEEFF50050DECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75835B0127FEEFF70050DECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */,
+				75669CA02802089A00699C7F /* UIViewController+Error.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				75C40D1428002921002A41E3 /* MainTabBarController.swift in Sources */,
 				75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */,
 				75C40D3628009ADE002A41E3 /* ListItemTableViewModel.swift in Sources */,
+				75669CA12802089A00699C7F /* UIViewController+Error.swift in Sources */,
 				75C40D3428009759002A41E3 /* ListItemViewModel+Room.swift in Sources */,
 				75C40D30280091A2002A41E3 /* ListItemViewModel.swift in Sources */,
 			);
