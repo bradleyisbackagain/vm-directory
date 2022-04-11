@@ -63,6 +63,16 @@ final class ListItemTableViewController: UITableViewController {
         viewModel.items.value.count
     }
     
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        let item = viewModel.items.value[indexPath.row]
+        return item.onSelection != nil
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = viewModel.items.value[indexPath.row]
+        item.onSelection?()
+    }
+    
     @objc func refresh() {
         loadModelData()
     }

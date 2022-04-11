@@ -15,6 +15,7 @@ struct ListItemViewModel {
     var subtitle: Box<String>
     /// When filtering, does this user query match this item?
     var matchesQuery: (String) -> Bool
+    var onSelection: (() -> Void)?
 }
 
 // MARK: - Icon
