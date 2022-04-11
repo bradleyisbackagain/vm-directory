@@ -10,7 +10,7 @@ import CommonUtils
 
 /// An item that can be displayed in `ListItemTableViewController`
 struct ListItemViewModel {
-    var icon: Box<Icon>?
+    var icon: Box<Icon?>
     var title: Box<String>
     var subtitle: Box<String>
     /// When filtering, does this user query match this item?
