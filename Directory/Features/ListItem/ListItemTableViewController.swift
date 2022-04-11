@@ -54,7 +54,9 @@ final class ListItemTableViewController: UITableViewController {
         )
         
         viewModel.items.bind { [weak self] _ in
-            self?.tableView.reloadData()
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
     }
     
