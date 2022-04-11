@@ -16,6 +16,6 @@ extension UIViewController {
     func select(person: Person) {
         let viewModel = PersonDetailViewModel(person)
         let vc = PersonDetailViewController(viewModel: viewModel)
-        show(vc, sender: self)
+        showDetailViewController(vc, sender: self)
     }
 }
