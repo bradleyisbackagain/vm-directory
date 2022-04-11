@@ -26,7 +26,7 @@ A simple directory application.
 
 ### Other
 
-- [ ] iPad support
+- [x] iPad support
 - [x] Accessible
     - Dynamic type font size
     - Accessibility label hints (most automatic, some added)
