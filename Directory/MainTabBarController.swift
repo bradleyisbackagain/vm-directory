@@ -29,7 +29,8 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
     func makeProductionAPI() -> RemoteDirectoryAPI {
         let url = URL("https://61e947967bc0550017bc61bf.mockapi.io/api/v1")
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
+        let dateDecoder = ISO8601MillisecondsDecoder()
+        decoder.dateDecodingStrategy = .custom(dateDecoder.decode)
         return RemoteDirectoryAPI(baseURL: url, jsonDecoder: decoder)
     }
     
