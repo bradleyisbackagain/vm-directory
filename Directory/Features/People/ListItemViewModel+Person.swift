@@ -10,8 +10,9 @@ import DirectoryService
 
 extension ListItemViewModel {
     init(person: Person, onSelection: @escaping () -> Void) {
-        self.title = Box(person.firstName)
-        self.subtitle = Box(person.jobTitle)
+        let detail = PersonDetailViewModel(person)
+        self.title = Box(detail.fullName)
+        self.subtitle = Box(person.email)
         self.icon = Box(.url(person.avatar))
         self.onSelection = onSelection
         self.matchesQuery = { search in

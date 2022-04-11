@@ -29,6 +29,26 @@ class PersonListItemTests: XCTestCase {
     override func tearDownWithError() throws {
     }
     
+}
+
+// MARK: - Labels
+
+extension PersonListItemTests {
+    func test_personTitleFullName() {
+        let listItem = ListItemViewModel(person: person, onSelection: {})
+        XCTAssertEqual(listItem.title.value, "Tom Jones")
+    }
+    
+    func test_personSubtitleEmail() {
+        let listItem = ListItemViewModel(person: person, onSelection: {})
+        XCTAssertEqual(listItem.subtitle.value, "xyxxx@place.com")
+    }
+}
+
+// MARK: - Query
+
+extension PersonListItemTests {
+    
     func test_personSearchQueryMatchFirstName() {
         let listItem = ListItemViewModel(person: person, onSelection: {})
         let match = listItem.matchesQuery("Tom")
