@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UIUtils
 
 final class ListItemTableViewCell: UITableViewCell {
     static let reuseIdentifier = "ListItemTableViewCell"
@@ -26,8 +27,9 @@ final class ListItemTableViewCell: UITableViewCell {
         return lbl
     }()
     
-    fileprivate lazy var iconImageView: UIImageView = {
-        let img = UIImageView()
+    fileprivate lazy var iconImageView: UIAsyncImageView = {
+        let loader = URLSessionAsyncImageViewLoader()
+        let img = UIAsyncImageView(loader: loader)
         let imageSize: CGFloat = 30
         // circle mask
         img.layer.cornerRadius = imageSize / 2
@@ -69,6 +71,12 @@ final class ListItemTableViewCell: UITableViewCell {
         contentView.addSubview(containerStack)
         contentView.edgeConstrain(subview: containerStack, layoutGuide: .margins)
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        iconImageView.cancelRemote()
+    }
 }
 
 extension ListItemViewModel {
@@ -80,10 +88,14 @@ extension ListItemViewModel {
             cell.subtitleLabel.text = subtitle
         }
         icon.bind { icon in
-            // TODO: load image if needed
             if let icon = icon {
                 cell.iconImageView.isHidden = false
-                cell.iconImageView.image = UIImage(named: "round_meeting_room_black_24pt")
+                switch icon {
+                case .local(let name):
+                    cell.iconImageView.image = UIImage(named: name)
+                case .url(let url):
+                    cell.iconImageView.loadRemote(url: url)
+                }
             } else {
                 cell.iconImageView.isHidden = true
             }
