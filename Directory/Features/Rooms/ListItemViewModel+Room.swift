@@ -15,7 +15,7 @@ extension ListItemViewModel {
         let availableTitle = room.isOccupied ? "Occupied" : "Available"
         self.subtitle = Box("\(availableTitle) • \(room.maxOccupancy) \(seatsTitle)")
         let icon = room.isOccupied ? "round_no_meeting_room_black_24pt" : "round_meeting_room_black_24pt"
-        self.icon = Box(.local(named: icon))
+        self.icon = Box(.local(named: icon, tint: room.isOccupied ? .red : .black))
         self.matchesQuery = { search in
             let lc = search.lowercased()
             return room.id.lowercased().contains(lc) ||
