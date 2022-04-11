@@ -10,6 +10,7 @@ import Foundation
 /// ViewModel for `ListItemTableViewController`
 final class ListItemTableViewModel {
     var service: ListItemService
+    /// The list items that should be displayed, as loaded from the service.
     private(set) var items = [ListItemViewModel]()
     
     init(service: ListItemService) {
@@ -27,15 +28,5 @@ final class ListItemTableViewModel {
                 completion(result.map { _ in })
             }
         }
-    }
-    
-    /// The number of sections the table should display.
-    func sectionCount() -> Int {
-        1
-    }
-    
-    /// The number of rows the table should display.
-    func rowCount() -> Int {
-        items.count
     }
 }

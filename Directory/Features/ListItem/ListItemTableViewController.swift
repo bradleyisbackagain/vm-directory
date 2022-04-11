@@ -47,11 +47,11 @@ final class ListItemTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel.sectionCount()
+        1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.rowCount()
+        viewModel.items.count
     }
     
     @objc func refresh() {
