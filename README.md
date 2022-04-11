@@ -23,10 +23,12 @@ A simple directory application.
 
 - [x] Unit tests for all business logic
 - [x] UI tests for views and view controllers
+    - In the interest of time, there's limited UI tests
 
 ### Other
 
 - [x] iPad support
+    - UISplitViewController
 - [x] Accessible
     - Dynamic type font size
     - Accessibility label hints (most automatic, some added)
