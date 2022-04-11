@@ -32,3 +32,13 @@ public struct Room: Identifiable, Hashable, Equatable, Codable {
         self.isOccupied = isOccupied
     }
 }
+
+extension Room: Queryable {
+    public func matches(query: String) -> Bool {
+        let search = query.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        func doesMatch(_ value: String) -> Bool {
+            value.lowercased().contains(search)
+        }
+        return doesMatch(id)
+    }
+}
