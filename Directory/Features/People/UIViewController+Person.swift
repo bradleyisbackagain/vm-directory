@@ -16,6 +16,15 @@ extension UIViewController {
     func select(person: Person) {
         let viewModel = PersonDetailViewModel(person)
         let vc = PersonDetailViewController(viewModel: viewModel)
-        showDetailViewController(vc, sender: self)
+        // FIXME: use better way to determine the UISplitViewController presentation
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: vc, action: #selector(dismissAnimated))
+        }
+        let nav = UINavigationController(rootViewController: vc)
+        showDetailViewController(nav, sender: self)
+    }
+    
+    @objc func dismissAnimated() {
+        dismiss(animated: true)
     }
 }
