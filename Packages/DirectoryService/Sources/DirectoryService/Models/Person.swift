@@ -59,15 +59,3 @@ extension Person: Codable {
     }
     
 }
-
-extension Person: Queryable {
-    public func matches(query: String) -> Bool {
-        let search = query.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-        func doesMatch(_ value: String) -> Bool {
-            value.lowercased().contains(search)
-        }
-        return doesMatch(firstName) ||
-            doesMatch(lastName) ||
-            doesMatch(email)
-    }
-}
