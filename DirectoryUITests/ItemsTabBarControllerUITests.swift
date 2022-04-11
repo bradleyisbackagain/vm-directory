@@ -45,7 +45,7 @@ class ItemsTabBarControllerUITests: XCTestCase {
         XCTAssertEqual(title, "tom.jones@example.com")
     }
     
-    func test_filtersCells() throws {
+    func test_filtersPeopleCells() throws {
         let table = app.tables["ListItemTableView"]
         // entry not yet filtered
         XCTAssertEqual(table.cells.count, 2)
@@ -54,6 +54,38 @@ class ItemsTabBarControllerUITests: XCTestCase {
         table.scroll(byDeltaX: 0, deltaY: -100)
         searchField.tap()
         searchField.typeText("Tom")
+        
+        // the other entry is filtered
+        XCTAssertEqual(table.cells.count, 1)
+    }
+    
+    private func showRoomList() {
+        app.tabBars.buttons.element(boundBy: 1).tap()
+    }
+    
+    func test_displaysRoomCells() {
+        showRoomList()
+        let cells = app.tables["ListItemTableView"].cells.count
+        XCTAssertEqual(cells, 2)
+    }
+    
+    func test_displaysValidTitleNameForFirstRoomCell() throws {
+        showRoomList()
+        let cell = app.tables["ListItemTableView"].cells.element(boundBy: 0)
+        let title = cell.staticTexts["TitleLabel"].label
+        XCTAssertEqual(title, "Room 1")
+    }
+    
+    func test_filtersRoomCells() throws {
+        showRoomList()
+        let table = app.tables["ListItemTableView"]
+        // entry not yet filtered
+        XCTAssertEqual(table.cells.count, 2)
+        
+        let searchField = app.searchFields.element(boundBy: 0)
+        table.scroll(byDeltaX: 0, deltaY: -100)
+        searchField.tap()
+        searchField.typeText("2")
         
         // the other entry is filtered
         XCTAssertEqual(table.cells.count, 1)
