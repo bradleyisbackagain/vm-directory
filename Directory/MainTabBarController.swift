@@ -15,7 +15,7 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         
         self.delegate = self
         
-        let productionAPI = makeStubAPI()
+        let productionAPI = makeProductionAPI()
         self.viewControllers = [
             makePeopleViewController(api: productionAPI),
             makeRoomsViewController(api: productionAPI),
