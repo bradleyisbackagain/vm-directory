@@ -10,18 +10,49 @@ import UIKit
 final class ListItemTableViewCell: UITableViewCell {
     static let reuseIdentifier = "ListItemTableViewCell"
     
-    lazy var titleLabel: UILabel = {
+    fileprivate lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .preferredFont(forTextStyle: .headline)
         lbl.textColor = .black
+        lbl.setContentCompressionResistancePriority(.required, for: .vertical)
         return lbl
     }()
     
-    lazy var subtitleLabel: UILabel = {
+    fileprivate lazy var subtitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = .preferredFont(forTextStyle: .footnote)
         lbl.textColor = .gray
+        lbl.setContentCompressionResistancePriority(.required, for: .vertical)
         return lbl
+    }()
+    
+    fileprivate lazy var iconImageView: UIImageView = {
+        let img = UIImageView()
+        let imageSize: CGFloat = 30
+        // circle mask
+        img.layer.cornerRadius = imageSize / 2
+        img.layer.masksToBounds = true
+        // constrain 1:1 aspect ratio
+        img.height(equalTo: imageSize)
+        img.constrainAsSquare()
+        img.setContentHuggingPriority(.defaultLow, for: .vertical)
+        img.setContentHuggingPriority(.required, for: .horizontal)
+        return img
+    }()
+    
+    private lazy var labelStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+        stack.axis = .vertical
+        stack.spacing = 4
+        return stack
+    }()
+    
+    private lazy var containerStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [iconImageView, labelStack])
+        stack.axis = .horizontal
+        stack.spacing = 16
+        stack.alignment = .top
+        return stack
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,11 +66,8 @@ final class ListItemTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        let stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-        stack.axis = .vertical
-        stack.spacing = 4
-        contentView.addSubview(stack)
-        contentView.edgeConstrain(subview: stack, layoutGuide: .margins)
+        contentView.addSubview(containerStack)
+        contentView.edgeConstrain(subview: containerStack, layoutGuide: .margins)
     }
 }
 
@@ -50,6 +78,15 @@ extension ListItemViewModel {
         }
         subtitle.bind { subtitle in
             cell.subtitleLabel.text = subtitle
+        }
+        icon.bind { icon in
+            // TODO: load image if needed
+            if let icon = icon {
+                cell.iconImageView.isHidden = false
+                cell.iconImageView.image = UIImage(named: "round_meeting_room_black_24pt")
+            } else {
+                cell.iconImageView.isHidden = true
+            }
         }
     }
 }
