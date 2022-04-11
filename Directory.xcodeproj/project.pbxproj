@@ -12,6 +12,7 @@
 		75669CA928034B6F00699C7F /* UIViewController+Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CA828034B6F00699C7F /* UIViewController+Person.swift */; };
 		75669CAB28034BD100699C7F /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CAA28034BD100699C7F /* PersonDetailViewModel.swift */; };
 		75669CAD28034C4400699C7F /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75669CAC28034C4400699C7F /* PersonDetailViewController.swift */; };
+		75669CB228035A2300699C7F /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 75669CB128035A2300699C7F /* UIUtils */; };
 		75835AF927FEEFF50050DECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75835AF827FEEFF50050DECB /* AppDelegate.swift */; };
 		75835B0227FEEFF70050DECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0127FEEFF70050DECB /* Assets.xcassets */; };
 		75835B0527FEEFF70050DECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75835B0327FEEFF70050DECB /* LaunchScreen.storyboard */; };
@@ -53,6 +54,7 @@
 		75669CA828034B6F00699C7F /* UIViewController+Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Person.swift"; sourceTree = "<group>"; };
 		75669CAA28034BD100699C7F /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		75669CAC28034C4400699C7F /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		75669CB02803566100699C7F /* UIUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UIUtils; sourceTree = "<group>"; };
 		75835AF527FEEFF50050DECB /* Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75835AF827FEEFF50050DECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75835B0127FEEFF70050DECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75669CB228035A2300699C7F /* UIUtils in Frameworks */,
 				75C40D2A28007EA7002A41E3 /* ThemeService in Frameworks */,
 				75C40D262800525F002A41E3 /* DirectoryService in Frameworks */,
 			);
@@ -193,6 +196,7 @@
 		75C40D1E28004992002A41E3 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				75669CB02803566100699C7F /* UIUtils */,
 				75C40D3728015B73002A41E3 /* CommonUtils */,
 				75C40D2828007B43002A41E3 /* ThemeService */,
 				75C40D2728006C8C002A41E3 /* DirectoryService */,
@@ -245,6 +249,7 @@
 			packageProductDependencies = (
 				75C40D252800525F002A41E3 /* DirectoryService */,
 				75C40D2928007EA7002A41E3 /* ThemeService */,
+				75669CB128035A2300699C7F /* UIUtils */,
 			);
 			productName = Directory;
 			productReference = 75835AF527FEEFF50050DECB /* Directory.app */;
@@ -703,6 +708,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		75669CB128035A2300699C7F /* UIUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIUtils;
+		};
 		75C40D252800525F002A41E3 /* DirectoryService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DirectoryService;
