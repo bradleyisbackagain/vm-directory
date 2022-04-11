@@ -73,10 +73,10 @@ final class ListItemTableViewController: UITableViewController {
                 defer { self?.refreshControl?.endRefreshing() }
                 switch result {
                 case .success:
-                    self?.tableView.reloadData()
+                    break
                 case .failure(let error):
-                    // TODO: surface error
-                    print(error)
+                    print("LOAD ERROR", error)
+                    self?.show(error: error)
                 }
             }
         }
