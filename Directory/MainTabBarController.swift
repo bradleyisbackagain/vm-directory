@@ -15,7 +15,7 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         
         self.delegate = self
         
-        let productionAPI = makeProductionAPI()
+        let productionAPI = makeStubAPI()
         self.viewControllers = [
             makePeopleViewController(api: productionAPI),
             makeRoomsViewController(api: productionAPI),
@@ -35,7 +35,7 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
     
     func makeStubAPI() -> StubDirectoryAPI {
         StubDirectoryAPI(
-            peopleData: .success([.init(id: "1", createdAt: Date(), firstName: "test", lastName: "test", avatar: URL(string: "https://google.com")!, email: "test@test.com", jobTitle: "Runner", favouriteColor: "green")]),
+            peopleData: .success([.init(id: "1", createdAt: Date(), firstName: "test", lastName: "test", avatar: URL(string: "https://avatars.githubusercontent.com/u/103203694?v=4")!, email: "test@test.com", jobTitle: "Runner", favouriteColor: "green")]),
             roomsData: .success([])
         )
     }
