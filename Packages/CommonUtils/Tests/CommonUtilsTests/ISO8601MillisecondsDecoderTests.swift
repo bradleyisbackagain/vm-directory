@@ -19,7 +19,8 @@ class ISO8601MillisecondsDecoderTests: XCTestCase {
         try super.setUpWithError()
         
         decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .custom(ISO8601MillisecondsDecoder.decode)
+        let dateDecoder = ISO8601MillisecondsDecoder()
+        decoder.dateDecodingStrategy = .custom(dateDecoder.decode)
     }
     
     func test_decodeWithMilliseconds() throws {

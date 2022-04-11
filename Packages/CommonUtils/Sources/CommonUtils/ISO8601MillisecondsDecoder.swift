@@ -10,8 +10,10 @@ import Foundation
 ///
 /// This is not supported by default by `JSONDecoder`, so we define a custom strategy here.
 /// See: https://stackoverflow.com/a/55470440
-public enum ISO8601MillisecondsDecoder {
-    private static let formatter: ISO8601DateFormatter = {
+public final class ISO8601MillisecondsDecoder {
+    public init() { }
+    
+    private let formatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [
             .withFullDate,
@@ -23,7 +25,7 @@ public enum ISO8601MillisecondsDecoder {
     }()
     
     /// Using the decoder, decode an ISO8601 date string (with milliseconds).
-    public static func decode(_ decoder: Decoder) throws -> Date {
+    public func decode(_ decoder: Decoder) throws -> Date {
         let container = try decoder.singleValueContainer()
         let string = try container.decode(String.self)
         if let date = formatter.date(from: string) {

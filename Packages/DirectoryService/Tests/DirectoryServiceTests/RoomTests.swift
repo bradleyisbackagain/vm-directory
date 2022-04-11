@@ -14,7 +14,8 @@ class RoomTests: XCTestCase {
 
     override func setUpWithError() throws {
         decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .custom(ISO8601MillisecondsDecoder.decode)
+        let dateDecoder = ISO8601MillisecondsDecoder()
+        decoder.dateDecodingStrategy = .custom(dateDecoder.decode)
     }
 
     override func tearDownWithError() throws {
