@@ -41,9 +41,21 @@ extension RoomListItemTests {
         XCTAssertEqual(listItem.subtitle.value, "1000 seats available")
     }
     
+    func test_occupiedRoomSingleSeat() {
+        occupiedRoom.maxOccupancy = 1
+        let listItem = ListItemViewModel(room: occupiedRoom)
+        XCTAssertEqual(listItem.subtitle.value, "1 seat available")
+    }
+    
     func test_availableRoomSubtitle() {
         let listItem = ListItemViewModel(room: availableRoom)
         XCTAssertEqual(listItem.subtitle.value, "50 seats available")
+    }
+    
+    func test_availableRoomSingleSeat() {
+        availableRoom.maxOccupancy = 1
+        let listItem = ListItemViewModel(room: availableRoom)
+        XCTAssertEqual(listItem.subtitle.value, "1 seat available")
     }
 }
 
