@@ -14,7 +14,7 @@ final class MainSplitViewController: UISplitViewController {
         
         let placeholder = UIViewController()
         viewControllers = [
-            MainTabBarController(),
+            ItemsTabBarController(),
             placeholder,
         ]
     }

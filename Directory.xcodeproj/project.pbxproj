@@ -29,7 +29,7 @@
 		75B6C864280424AD00476C5F /* PersonDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B6C863280424AD00476C5F /* PersonDetailViewModelTests.swift */; };
 		75B6C8662804281600476C5F /* ListItemServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B6C8652804281600476C5F /* ListItemServiceTests.swift */; };
 		75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */; };
-		75C40D1428002921002A41E3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1328002921002A41E3 /* MainTabBarController.swift */; };
+		75C40D1428002921002A41E3 /* ItemsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D1328002921002A41E3 /* ItemsTabBarController.swift */; };
 		75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */; };
 		75C40D262800525F002A41E3 /* DirectoryService in Frameworks */ = {isa = PBXBuildFile; productRef = 75C40D252800525F002A41E3 /* DirectoryService */; };
 		75C40D2A28007EA7002A41E3 /* ThemeService in Frameworks */ = {isa = PBXBuildFile; productRef = 75C40D2928007EA7002A41E3 /* ThemeService */; };
@@ -85,7 +85,7 @@
 		75B6C8652804281600476C5F /* ListItemServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemServiceTests.swift; sourceTree = "<group>"; };
 		75C40D102800196E002A41E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75C40D1128001A2D002A41E3 /* AutolayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutHelpers.swift; sourceTree = "<group>"; };
-		75C40D1328002921002A41E3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		75C40D1328002921002A41E3 /* ItemsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTabBarController.swift; sourceTree = "<group>"; };
 		75C40D15280029F8002A41E3 /* ListItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewController.swift; sourceTree = "<group>"; };
 		75C40D2728006C8C002A41E3 /* DirectoryService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DirectoryService; sourceTree = "<group>"; };
 		75C40D2828007B43002A41E3 /* ThemeService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ThemeService; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 			children = (
 				75835AF827FEEFF50050DECB /* AppDelegate.swift */,
 				758537D0280433D900DE9860 /* MainSplitViewController.swift */,
-				75C40D1328002921002A41E3 /* MainTabBarController.swift */,
+				75C40D1328002921002A41E3 /* ItemsTabBarController.swift */,
 				75C40D18280033C2002A41E3 /* Features */,
 				75C40D17280033BA002A41E3 /* Helpers */,
 				75835B0127FEEFF70050DECB /* Assets.xcassets */,
@@ -408,7 +408,7 @@
 				75C40D2C28008AC3002A41E3 /* ListItemService.swift in Sources */,
 				75C40D16280029F8002A41E3 /* ListItemTableViewController.swift in Sources */,
 				75C40D322800944B002A41E3 /* ListItemViewModel+Person.swift in Sources */,
-				75C40D1428002921002A41E3 /* MainTabBarController.swift in Sources */,
+				75C40D1428002921002A41E3 /* ItemsTabBarController.swift in Sources */,
 				75C40D1228001A2D002A41E3 /* AutolayoutHelpers.swift in Sources */,
 				75669CA928034B6F00699C7F /* UIViewController+Person.swift in Sources */,
 				75C40D3628009ADE002A41E3 /* ListItemTableViewModel.swift in Sources */,

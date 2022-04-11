@@ -1,5 +1,5 @@
 //
-//  MainTabBarController.swift
+//  ItemsTabBarController.swift
 //  Directory
 //
 //  Created by Bradley Mackey on 08/04/2022.
@@ -8,7 +8,7 @@
 import UIKit
 import DirectoryService
 
-final class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+final class ItemsTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
