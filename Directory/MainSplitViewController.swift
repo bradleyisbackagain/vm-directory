@@ -9,7 +9,12 @@ import UIKit
 import DirectoryService
 import CommonUtils
 
+/// The UI Entrypoint for the app.
 final class MainSplitViewController: UISplitViewController {
+    
+    // TODO: work out some splitviewcontroller logic on phones vs. ipads
+    // We ideally want compact details to be shown as a navigationcontroller push vs
+    // split view controller modal.
     
     override func viewDidLoad() {
         super.viewDidLoad()
