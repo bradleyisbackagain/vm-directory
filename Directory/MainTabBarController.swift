@@ -10,19 +10,15 @@ import DirectoryService
 
 final class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    let stubAPI = StubDirectoryAPI(
-        peopleData: .success([.init(id: "1", createdAt: Date(), firstName: "test", lastName: "test", avatar: URL(string: "https://google.com")!, email: "test@test.com", jobTitle: "Runner", favouriteColor: "green")]),
-        roomsData: .success([])
-    )
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
         
+        let productionAPI = makeProductionAPI()
         self.viewControllers = [
-            makePeopleViewController(),
-            makeRoomsViewController(),
+            makePeopleViewController(api: productionAPI),
+            makeRoomsViewController(api: productionAPI),
         ]
     }
     
@@ -30,8 +26,22 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         print("selected", viewController)
     }
     
-    func makePeopleViewController() -> UIViewController {
-        let service = ListItemViewModelPersonServiceAdapter(api: stubAPI)
+    func makeProductionAPI() -> RemoteDirectoryAPI {
+        let url = URL("https://61e947967bc0550017bc61bf.mockapi.io/api/v1")
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return RemoteDirectoryAPI(baseURL: url, jsonDecoder: decoder)
+    }
+    
+    func makeStubAPI() -> StubDirectoryAPI {
+        StubDirectoryAPI(
+            peopleData: .success([.init(id: "1", createdAt: Date(), firstName: "test", lastName: "test", avatar: URL(string: "https://google.com")!, email: "test@test.com", jobTitle: "Runner", favouriteColor: "green")]),
+            roomsData: .success([])
+        )
+    }
+    
+    func makePeopleViewController(api: any DirectoryAPI) -> UIViewController {
+        let service = ListItemViewModelPersonServiceAdapter(api: api)
         let viewModel = ListItemTableViewModel(service: service)
         let viewController = ListItemTableViewController(viewModel: viewModel)
         let tabItem = UITabBarItem(
@@ -43,8 +53,8 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         return viewController
     }
     
-    func makeRoomsViewController() -> UIViewController {
-        let service = ListItemViewModelPersonServiceAdapter(api: stubAPI)
+    func makeRoomsViewController(api: any DirectoryAPI) -> UIViewController {
+        let service = ListItemViewModelPersonServiceAdapter(api: api)
         let viewModel = ListItemTableViewModel(service: service)
         let viewController = ListItemTableViewController(viewModel: viewModel)
         let tabItem = UITabBarItem(
